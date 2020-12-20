@@ -13,21 +13,29 @@ const Contador = () => {
 
     const aumentar1 = () => {
         if(numero1[0] === false){
-            if (numero2[1] === 1 && numero3[1] === 2 ){
-                setNumero1([!numero1[0], numero3[1] ])
-                setNumero2([!numero2[0], numero2[1] - 1])
-                setNumero3([numero3[0], numero3[1] - 1])
-            }else{
-               setNumero1([!numero1[0], numero2[1]])
-               setNumero2([numero2[0], numero1[1] - 1])
-               setNumero3([!numero3[0], numero3[1] - 1])
+
+            if(numero2[1] === 0 || numero3[1] === 0){
+                setNumero1([!numero1[0], 2])
+            } else{
+             if (numero2[1] === 1 && numero3[1] === 2 ){
+                    setNumero1([!numero1[0], numero3[1] ])
+                    setNumero2([!numero2[0], numero2[1] - 1])
+                    setNumero3([numero3[0], numero3[1] - 1])
+                }else{
+                    setNumero1([!numero1[0], numero2[1]])
+                    setNumero2([numero2[0], numero1[1] - 1])
+                    setNumero3([!numero3[0], numero3[1] - 1])
+                }
             }
+               
+
+
         }else{
             setNumero1([!numero1[0], numero1[1]- 1] )
 
-            if(numero2[1] > 0){
+            if(numero2[1] === 2){
                 setNumero2([numero2[0], numero2[1] - 1])
-            }else{
+            }else if(numero3[1] === 2){
                 setNumero3([numero3[0], numero3[1] - 1])
             }
             
@@ -41,7 +49,12 @@ const Contador = () => {
 
     const aumentar2 = () => {
         if(numero2[0] === false){
-                if (numero1[1] === 1 && numero3[1] === 2 ){
+
+            if(numero3[1]===0 || numero1[1]===0){
+                setNumero2([!numero2[0], 2])
+            }
+            else{
+               if (numero1[1] === 1 && numero3[1] === 2 ){
                 setNumero2([!numero2[0], numero3[1] ])
                 
                 setNumero1([!numero1[0], numero1[1] - 1])
@@ -52,24 +65,33 @@ const Contador = () => {
                 
                 setNumero1([numero1[0], numero1[1] - 1])
                 setNumero3([!numero3[0], numero3[1] - 1])
+            } 
             }
+
+            
         }else{
             setNumero2([!numero2[0], numero2[1]] - 1)
-            if(numero1[1] > 0){
+            if(numero1[1] === 2){
                 setNumero1([numero1[0], numero1[1] - 1])
-            }else{
+            }else if(numero3[1] === 2){
                 setNumero3([numero3[0], numero3[1] - 1])
             }
 
         }
-        
+        console.log(numero1)
+        console.log(numero2)
+        console.log(numero3)
 
     }
 
     const aumentar3 = () => {
 
         if(numero3[0] === false){
-            if (numero1[1] === 1 && numero2[1] === 2 ){
+
+            if(numero1[1] === 0 || numero2[2] === 0){
+                setNumero3([!numero3[0], 2])
+            }else{
+                if (numero1[1] === 1 && numero2[1] === 2 ){
                 setNumero3([!numero3[0], numero2[1] ])
                 
                 setNumero1([!numero1[0], numero1[1] - 1])
@@ -81,15 +103,20 @@ const Contador = () => {
                 setNumero1([numero1[0], numero1[1] - 1])
                 setNumero2([!numero2[0], numero2[1] - 1])
             }
+            }
+
+            
         }else{
             setNumero3([!numero3[0], numero3[1] -1])
-            if(numero1[1] > 0){
+            if(numero1[1] === 2){
                 setNumero1([numero1[0], numero1[1] - 1])
-            }else{
+            }else if(numero2[1] === 2) {
                 setNumero2([numero2[0], numero2[1] - 1])
             }
         }
-        
+        console.log(numero1)
+        console.log(numero2)
+        console.log(numero3)
      
     }
 
